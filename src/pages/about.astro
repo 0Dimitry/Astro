@@ -1,5 +1,20 @@
 ---
+import '../styles/global.css';
 
+const pageTitle = "Sobre mi";
+
+const identity = {
+    firstName: "Santiago",
+    lastName: "Caballero",
+    country: "Colombia",
+    occupation: "Nada",
+    hobbies: ["VideoGames", "Serie", "Peliculas", "Programar"]
+};
+
+const skills = ["HTML","CSS","JavaScript","Python","React","React Native","WordPress", "Powers Apps", "SqlServer", "MongoDB"];
+
+const skillcolor = "black";
+const textCase = "uppercase"
 ---
 
 <html lang="en">
@@ -8,12 +23,39 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Mi Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Inicio</a>
         <a href="/about">Sobre mi</a>
         <a href="/blog">Blog</a>
-		<h1>Sobre mi</h1>
+		<h1>{pageTitle}</h1>
+
+        <p>Datos sobre mi:</p>
+        <ul>
+            <li>Me llamo {identity.firstName +" "+ identity.lastName}</li>
+            <li>vivo en {identity.country} y trabajo como {identity.occupation}</li>
+            {identity.hobbies.length >= 2  &&
+            <li>Dos de mis aficiones son: {identity.hobbies[3]} y los {identity.hobbies[0]}</li>
+            }
+        </ul>
+        <p>Mis habilidades son:</p>
+        <ul>
+            {skills.map(
+                (skills)=> <li class="skill">{skills}</li>
+                )}
+        </ul>
+
+        <style define:vars={{skillcolor, textCase}}>
+            h1{
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill{
+                color: var(--skillcolor);
+                font-weight: bold;
+                text-transform: var(--textCase)
+            }
+        </style>
 	</body>
 </html>
