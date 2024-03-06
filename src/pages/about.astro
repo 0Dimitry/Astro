@@ -1,11 +1,7 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import MenuHamburger from '../components/MenuHamburger.astro'
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-
-const pageTitle = "Sobre mi";
+const pageTitle ="Pagina de inicio";
 
 const identity = {
     firstName: "Santiago",
@@ -21,53 +17,34 @@ const skillcolor = "black";
 const textCase = "uppercase"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-        <MenuHamburger/>
-        <Header></Header>
-        <section>
-            <h1>{pageTitle}</h1>
+<BaseLayout>
+    <h1>Sobre Mi</h1>
 
-                <p>Datos sobre mi:</p>
-                <ul>
-                    <li>Me llamo {identity.firstName +" "+ identity.lastName}</li>
-                    <li>vivo en {identity.country} y trabajo como {identity.occupation}</li>
-                    {identity.hobbies.length >= 2  &&
-                    <li>Dos de mis aficiones son: {identity.hobbies[3]} y los {identity.hobbies[0]}</li>
-                    }
-                </ul>
-                <p>Mis habilidades son:</p>
-                <ul>
-                    {skills.map(
-                        (skills)=> <li class="skill">{skills}</li>
-                        )}
-                </ul>
+    <p>Datos sobre mi:</p>
+    <ul>
+        <li>Me llamo {identity.firstName +" "+ identity.lastName}</li>
+        <li>vivo en {identity.country} y trabajo como {identity.occupation}</li>
+        {identity.hobbies.length >= 2  &&
+        <li>Dos de mis aficiones son: {identity.hobbies[3]} y los {identity.hobbies[0]}</li>
+        }
+    </ul>
+    <p>Mis habilidades son:</p>
+    <ul>
+        {skills.map(
+            (skills)=> <li class="skill">{skills}</li>
+            )}
+    </ul>
 
-                <style define:vars={{skillcolor, textCase}}>
-                    h1{
-                        color: purple;
-                        font-size: 4rem;
-                    }
-                    .skill{
-                        color: var(--skillcolor);
-                        font-weight: bold;
-                        text-transform: var(--textCase)
-                    }
-                </style>
-        </section>
-		
+    <style define:vars={{skillcolor, textCase}}>
+        h1{
+            color: purple;
+            font-size: 4rem;
+        }
+        .skill{
+            color: var(--skillcolor);
+            font-weight: bold;
+            text-transform: var(--textCase)
+        }
+    </style>
 
-        <Footer></Footer>
-        <script>
-			import "../scripts/HamburgerMenu.js";
-		</script>
-
-	</body>
-</html>
+</BaseLayout>
