@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import MenuHamburger from '../components/MenuHamburger.astro'
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -11,15 +14,17 @@ import '../styles/global.css';
 		<title>Mi Astro</title>
 	</head>
 	<body>
-		<a href="/">Inicio</a>
-        <a href="/about">Sobre mi</a>
-		<a href="/blog">Blog</a>
-		<h1>Inicio</h1>
-	</body>
+		<MenuHamburger/>
+		<Header></Header>
 
-	<ul>
-		<li><a href="/posts/post-1">Publicacion # 1</a></li>
-		<li><a href="/posts/post-2">Publicacion # 2</a></li>
-		<li><a href="/posts/post-3">Publicacion # 3</a></li>
-	</ul>
+		<section>
+			<h1>Inicio</h1>
+		</section>
+		
+
+		<Footer></Footer>
+		<script>
+			import "../scripts/HamburgerMenu.js";
+		</script>
+	</body>
 </html>
