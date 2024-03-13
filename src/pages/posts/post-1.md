@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi primera publicación en el blog'
 subTitle_1: 'Lo que he conseguido'
 subTitle_2: 'Próximos pasos'
-pubDate: 2022-07-01
+pubDate: 2024-03-02
 description: 'Este es la primera publicación de mi nuevo blog Astro.'
 description_2: '¡Bienvenido a mi nuevo blog sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.'
 author: 'Alumno de Astro'
