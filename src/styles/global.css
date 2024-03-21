@@ -16,7 +16,7 @@ html {
     line-height: 1.5;
     padding-bottom: 40px;
     margin-bottom: -40px; /*Para poder el footer a la altura de la pantalla este valor igual al tamaño del footer*/
-    min-height: calc(100vh - 48px) /*LA altura minima del contenido, menos los valores del footer*/
+    min-height: calc(100vh - 83px) /*La altura minima del contenido, menos los valores del footer*/
   }
   
   * {
