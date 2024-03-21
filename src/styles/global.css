@@ -1,8 +1,8 @@
 html {
     background-color: #f1f5f9;
     font-family: sans-serif;
-  }
-  
+  } 
+
   body {
     margin: 0 auto;
     width: 100%;
@@ -52,7 +52,6 @@ div.nav-links{
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #000000;
     display: none;
     margin: 0;
   }
@@ -93,4 +92,49 @@ div.nav-links{
     .hamburger{
         display: none;
     }
+  }
+
+  .footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temaIcono{
+  justify-content: end;
+}
+
+  /* DarkMode */
+
+  html.dark{
+    background-color:#000000;
+    color: white;
+  }
+
+  .dark div.nav-links{
+    background-color: #ffffff;
+  }
+
+  .dark .nav-links a{
+    background-color: white;
+    color: black;
+  }
+
+  .dark .nav-links a:hover,
+  .nav-links a:focus{
+    background-color: #919191;
+  }
+
+  .dark .hamburger .line{
+    background-color: white;
+  }
+
+  .dark .footer{
+    background-color: white;
   }
